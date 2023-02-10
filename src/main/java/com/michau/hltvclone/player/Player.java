@@ -25,6 +25,9 @@ public class Player {
     @Column(name = "NICKNAME")
     private String nickname;
 
+    @Column(name = "COUNTRY")
+    private String country;
+
     @Column(name ="BIRTH_DATE")
     private LocalDate birthDate;
 

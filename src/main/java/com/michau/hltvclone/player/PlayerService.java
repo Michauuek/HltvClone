@@ -13,6 +13,6 @@ public class PlayerService {
     }
 
     public List<Player> getTeamPlayers(String teamName) {
-        return playerRepository.findByTeam(teamName);
+        return playerRepository.findByTeam(teamName.toLowerCase());
     }
 }
