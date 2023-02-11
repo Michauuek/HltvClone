@@ -2,6 +2,7 @@ package com.michau.hltvclone.team;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.michau.hltvclone.match.Match;
 import com.michau.hltvclone.player.Player;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -40,4 +41,8 @@ public class Team {
     @OneToMany(mappedBy = "team", cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<Player> players;
+
+    @ManyToMany(mappedBy = "teams")
+    @JsonIgnore
+    private Set<Match> matches;
 }
