@@ -1,6 +1,7 @@
 package com.michau.hltvclone.team;
 
 import com.michau.hltvclone.team.dto.TeamResponse;
+import com.michau.hltvclone.team.exception.TeamNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,10 +14,14 @@ public class TeamService {
 
     public TeamResponse getTeamByName(String name) {
         if(name == null || name.isEmpty()) {
-            return null;
+            throw new IllegalArgumentException("Name cannot be empty");
         }
 
         var team = teamRepository.findByName(name.toLowerCase());
+
+        if(team == null){
+            throw new TeamNotFoundException();
+        }
 
         return TeamResponse
                 .builder()

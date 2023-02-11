@@ -1,10 +1,10 @@
 package com.michau.hltvclone.player;
 
 import com.michau.hltvclone.player.dto.PlayerResponse;
+import com.michau.hltvclone.player.exception.PlayersNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class PlayerService {
@@ -17,11 +17,15 @@ public class PlayerService {
     public List<PlayerResponse> getTeamPlayers(String teamName) {
 
         if(teamName == null || teamName.isEmpty()) {
-            return null;
+            throw new IllegalArgumentException("Name cannot be empty");
         }
-        var playerEntity = playerRepository.findByTeamNameIgnoreCase(teamName.toLowerCase());
+        var teamPlayers = playerRepository.findByTeamNameIgnoreCase(teamName.toLowerCase());
 
-        return playerEntity
+        if(teamPlayers.isEmpty()){
+            throw new PlayersNotFoundException();
+        }
+
+        return teamPlayers
                 .stream()
                 .map(player -> PlayerResponse
                         .builder()
