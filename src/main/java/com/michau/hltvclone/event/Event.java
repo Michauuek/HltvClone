@@ -35,4 +35,7 @@ public class Event {
 
     @Column(name = "LOCATION")
     private String location;
+
+    //teams
+    //matches
 }
