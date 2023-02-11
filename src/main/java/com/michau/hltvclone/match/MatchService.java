@@ -15,7 +15,6 @@ public class MatchService {
         this.matchRepository = matchRepository;
     }
 
-
     public List<MatchResponse> getTodayMatches() {
         var todayMatches = matchRepository.findAllByDate(LocalDate.now());
 
@@ -23,8 +22,7 @@ public class MatchService {
             throw new MatchesNotFoundException();
         }
 
-        //TODO check if match contains 2 teams
-        //sometimes matches can be without teams
+        //TODO add mappers
         return todayMatches
                 .stream()
                 .map(match -> MatchResponse
@@ -32,18 +30,24 @@ public class MatchService {
                         .matchId(match.getMatchId())
                         .date(match.getDate())
                         .time(match.getTime())
-                        .teamOneName(match
+                        .teamOneName(
+                            match
                                 .getTeams()
-                                .stream()
-                                .toList()
-                                .get(0)
-                                .getName())
-                        .teamTwoName(match
+                                .isEmpty() ? null : match
+                                    .getTeams()
+                                    .stream()
+                                    .toList()
+                                    .get(0)
+                                    .getName())
+                        .teamTwoName(
+                             match
                                 .getTeams()
-                                .stream()
-                                .toList()
-                                .get(1)
-                                .getName())
+                                .size() > 1 ? match
+                                    .getTeams()
+                                    .stream()
+                                    .toList()
+                                    .get(1)
+                                    .getName() : null)
                         .build()
                 ).toList();
     }

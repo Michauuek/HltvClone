@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -29,7 +29,7 @@ public class Match {
             name = "MATCH_TEAM",
             joinColumns =  @JoinColumn(name = "MATCH_ID"),
             inverseJoinColumns = @JoinColumn(name = "TEAM_ID"))
-    private Set<Team> teams;
+    private List<Team> teams;
 
     //format - BO1
 
