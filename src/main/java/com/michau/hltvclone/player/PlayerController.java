@@ -1,5 +1,6 @@
 package com.michau.hltvclone.player;
 
+import com.michau.hltvclone.player.dto.PlayerResponse;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +16,7 @@ public class PlayerController {
     }
 
     @RequestMapping("/team/{teamName}")
-    public List<Player> getTeamPlayers(@PathVariable("teamName") String teamName) {
+    public List<PlayerResponse> getTeamPlayers(@PathVariable("teamName") String teamName) {
         return playerService.getTeamPlayers(teamName);
     }
 }

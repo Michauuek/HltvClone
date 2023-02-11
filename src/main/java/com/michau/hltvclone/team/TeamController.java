@@ -1,5 +1,6 @@
 package com.michau.hltvclone.team;
 
+import com.michau.hltvclone.team.dto.TeamResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,7 +16,7 @@ public class TeamController {
     }
 
     @GetMapping("/{name}")
-    public Team getTeam(@PathVariable("name") String name) {
+    public TeamResponse getTeam(@PathVariable("name") String name) {
         return teamService.getTeamByName(name);
     }
 }

@@ -1,5 +1,6 @@
 package com.michau.hltvclone.player;
 
+import com.michau.hltvclone.team.Team;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,9 +32,12 @@ public class Player {
     @Column(name ="BIRTH_DATE")
     private LocalDate birthDate;
 
-    //current team
-    @Column(name = "TEAM")
-    private String team;
+    @ManyToOne
+    @JoinColumns({
+            @JoinColumn(name="TEAM_ID", referencedColumnName="TEAM_ID"),
+            @JoinColumn(name="TEAM_NAME", referencedColumnName="TEAM_NAME")
+    })
+    private Team team;
 
     //previous teams
 
