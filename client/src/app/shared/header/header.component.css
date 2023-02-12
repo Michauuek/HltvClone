@@ -1,0 +1,41 @@
+.main-header {
+    background-color: #2D3844;
+    max-width: 100%;
+    min-width: 800px;
+    max-height: 6%;
+    overflow: hidden;
+}
+
+.header-content {
+    background-color: #2D3844;
+    margin: auto;
+    width: 50%;
+}
+
+.header-item {
+    display: inline-block;
+    color: lightgrey;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+li {
+    float: left;
+    border-left-style: solid;
+    border-width: 0.3px;
+    border-color: gray;
+}
+
+li:hover {
+    background-color: #cecccc54;
+}

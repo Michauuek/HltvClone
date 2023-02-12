@@ -1,0 +1,15 @@
+
+.main-container {
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+}
+
+.content-container {
+    height: 100%;
+    margin: auto;
+    width: 51%;
+    min-width: 400px;
+    padding: 10px;
+    background-color: #1B1F23;
+}

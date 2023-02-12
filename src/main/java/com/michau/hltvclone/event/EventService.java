@@ -9,7 +9,7 @@ public class EventService {
     public EventService(EventRepository eventRepository) {
         this.eventRepository = eventRepository;
     }
-    
+
     public EventResponse getEventById(long id) {
         var event = eventRepository.findById(id);
         return null;

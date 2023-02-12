@@ -1,9 +1,8 @@
 package com.michau.hltvclone.event;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/event")
@@ -17,5 +16,10 @@ public class EventController {
     @GetMapping("/{id}")
     public EventResponse getEventById(@PathVariable("id") long id) {
         return eventService.getEventById(id);
+    }
+
+    @GetMapping("/siema")
+    public ResponseEntity<String> siema(){
+        return new ResponseEntity<>("Siema", HttpStatus.OK);
     }
 }
