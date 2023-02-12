@@ -13,3 +13,15 @@
     padding: 10px;
     background-color: #1B1F23;
 }
+
+.news-container {
+    position: absolute;
+    min-width: 400px;
+    padding-top: 50px;
+    background-color: whitesmoke;
+}
+
+#column-container {
+    padding: 10px;
+    margin: 10px;
+}

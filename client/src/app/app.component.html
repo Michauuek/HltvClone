@@ -1,6 +1,19 @@
 <div class="main-container">
     <app-header></app-header>
     <div class="content-container">
-        siema
+
+        <div class="row">
+            <div class="col" id="column-container">
+                1 of 3
+            </div>
+            <div class="col-6" id="column-container">
+                <app-news-tile [newsTitle]="siemaTitle" ></app-news-tile>
+                <app-news-tile [newsTitle]="siemaTitle" ></app-news-tile>
+                <app-news-tile [newsTitle]="siemaTitle" ></app-news-tile>
+            </div>
+            <div class="col" id="column-container">
+                siema, elodsadasdsadasdasdas
+            </div>
+        </div>
     </div>
 </div>

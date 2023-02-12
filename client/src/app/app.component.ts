@@ -16,7 +16,7 @@ export interface Map {
 })
 export class AppComponent implements OnInit {
   siema: Map | undefined;
-
+  siemaTitle: string = "Iem katowiceHalo "
   constructor(private _apiService: ApiService) {
   }
 
