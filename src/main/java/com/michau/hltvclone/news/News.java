@@ -28,6 +28,4 @@ public class News {
     @Column(name = "DATE")
     private LocalDate date;
 
-    @Column(name = "COUNTRY")
-    private String country;
 }

@@ -1,6 +1,5 @@
-package com.michau.hltvclone.match.dto;
+package com.michau.hltvclone.match.model;
 
-import jakarta.persistence.Column;
 import lombok.Builder;
 import lombok.Data;
 

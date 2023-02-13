@@ -1,6 +1,6 @@
 package com.michau.hltvclone.team;
 
-import com.michau.hltvclone.team.dto.TeamResponse;
+import com.michau.hltvclone.team.model.TeamResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

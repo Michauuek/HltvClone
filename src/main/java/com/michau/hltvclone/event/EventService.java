@@ -1,5 +1,6 @@
 package com.michau.hltvclone.event;
 
+import com.michau.hltvclone.event.model.EventResponse;
 import org.springframework.stereotype.Service;
 
 @Service

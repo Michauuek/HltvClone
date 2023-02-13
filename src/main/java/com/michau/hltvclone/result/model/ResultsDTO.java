@@ -1,7 +1,6 @@
-package com.michau.hltvclone.result.dto;
+package com.michau.hltvclone.result.model;
 
 
-import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.domain.Page;
 

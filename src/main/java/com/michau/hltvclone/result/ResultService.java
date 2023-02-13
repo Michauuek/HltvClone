@@ -1,8 +1,7 @@
 package com.michau.hltvclone.result;
 
-import com.michau.hltvclone.result.dto.ResultResponse;
-import com.michau.hltvclone.result.dto.ResultsDTO;
-import org.springframework.data.domain.PageImpl;
+import com.michau.hltvclone.result.model.ResultResponse;
+import com.michau.hltvclone.result.model.ResultsDTO;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

@@ -1,4 +1,4 @@
-package com.michau.hltvclone.player.dto;
+package com.michau.hltvclone.player.model;
 
 import lombok.Builder;
 import lombok.Data;

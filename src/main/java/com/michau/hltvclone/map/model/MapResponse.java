@@ -1,4 +1,4 @@
-package com.michau.hltvclone.map;
+package com.michau.hltvclone.map.model;
 
 import jakarta.persistence.Column;
 import lombok.Builder;

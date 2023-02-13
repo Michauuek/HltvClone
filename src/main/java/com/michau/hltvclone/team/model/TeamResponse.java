@@ -1,4 +1,4 @@
-package com.michau.hltvclone.team.dto;
+package com.michau.hltvclone.team.model;
 
 import lombok.Builder;
 import lombok.Data;

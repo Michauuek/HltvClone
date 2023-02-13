@@ -1,5 +1,6 @@
 package com.michau.hltvclone.news;
 
+import com.michau.hltvclone.news.model.NewsResponse;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

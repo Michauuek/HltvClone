@@ -1,4 +1,4 @@
-package com.michau.hltvclone.news;
+package com.michau.hltvclone.news.model;
 
 import lombok.Builder;
 import lombok.Data;
@@ -12,5 +12,4 @@ public class NewsResponse {
     private String title;
     private String content;
     private LocalDate date;
-    private String country;
 }

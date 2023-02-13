@@ -1,5 +1,6 @@
 package com.michau.hltvclone.map;
 
+import com.michau.hltvclone.map.model.MapResponse;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

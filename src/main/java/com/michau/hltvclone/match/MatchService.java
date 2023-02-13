@@ -1,6 +1,6 @@
 package com.michau.hltvclone.match;
 
-import com.michau.hltvclone.match.dto.MatchResponse;
+import com.michau.hltvclone.match.model.MatchResponse;
 import com.michau.hltvclone.match.exception.MatchesNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +10,11 @@ import java.util.List;
 @Service
 public class MatchService {
     private final MatchRepository matchRepository;
+    private final MatchMapper matchMapper;
 
-    public MatchService(MatchRepository matchRepository) {
+    public MatchService(MatchRepository matchRepository, MatchMapper matchMapper) {
         this.matchRepository = matchRepository;
+        this.matchMapper = matchMapper;
     }
 
     public List<MatchResponse> getTodayMatches() {
@@ -22,33 +24,9 @@ public class MatchService {
             throw new MatchesNotFoundException();
         }
 
-        //TODO add mappers
         return todayMatches
                 .stream()
-                .map(match -> MatchResponse
-                        .builder()
-                        .matchId(match.getMatchId())
-                        .date(match.getDate())
-                        .time(match.getTime())
-                        .teamOneName(
-                            match
-                                .getTeams()
-                                .isEmpty() ? null : match
-                                    .getTeams()
-                                    .stream()
-                                    .toList()
-                                    .get(0)
-                                    .getName())
-                        .teamTwoName(
-                             match
-                                .getTeams()
-                                .size() > 1 ? match
-                                    .getTeams()
-                                    .stream()
-                                    .toList()
-                                    .get(1)
-                                    .getName() : null)
-                        .build()
-                ).toList();
+                .map(matchMapper::toResponse)
+                .toList();
     }
 }

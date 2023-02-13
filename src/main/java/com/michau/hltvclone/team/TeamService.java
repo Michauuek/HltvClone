@@ -1,15 +1,17 @@
 package com.michau.hltvclone.team;
 
-import com.michau.hltvclone.team.dto.TeamResponse;
+import com.michau.hltvclone.team.model.TeamResponse;
 import com.michau.hltvclone.team.exception.TeamNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TeamService {
     private final TeamRepository teamRepository;
+    private final TeamMapper teamMapper;
 
-    public TeamService(TeamRepository teamRepository) {
+    public TeamService(TeamRepository teamRepository, TeamMapper teamMapper) {
         this.teamRepository = teamRepository;
+        this.teamMapper = teamMapper;
     }
 
     public TeamResponse getTeamByName(String name) {
@@ -23,14 +25,6 @@ public class TeamService {
             throw new TeamNotFoundException();
         }
 
-        return TeamResponse
-                .builder()
-                .id(team.getId())
-                .country(team.getCountry())
-                .logoUrl(team.getLogoUrl())
-                .avgPlayerAge(team.getAvgPlayerAge())
-                .rankingPoints(team.getRankingPoints())
-                .name(team.getName())
-                .build();
+        return teamMapper.toResponse(team);
     }
 }

@@ -1,7 +1,7 @@
 package com.michau.hltvclone.result;
 
-import com.michau.hltvclone.result.dto.ResultResponse;
-import com.michau.hltvclone.result.dto.ResultsDTO;
+import com.michau.hltvclone.result.model.ResultResponse;
+import com.michau.hltvclone.result.model.ResultsDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
