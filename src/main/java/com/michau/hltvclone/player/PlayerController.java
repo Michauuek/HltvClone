@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/player")
+@RequestMapping("/api/v1/player")
 public class PlayerController {
     private final PlayerService playerService;
     public PlayerController(PlayerService playerService) {

@@ -8,6 +8,11 @@ import java.util.List;
 
 @Repository
 public interface ResultRepository extends JpaRepository<Result, Long> {
-    @Query(value = "SELECT * FROM result WHERE match_id = ?1", nativeQuery = true)
+    @Query(
+            value = "SELECT * " +
+                    "FROM result " +
+                    "WHERE match_id = ?1",
+            nativeQuery = true
+    )
     List<Result> findAllByMatchId(long matchId);
 }

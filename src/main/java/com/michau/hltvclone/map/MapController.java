@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/map")
+@RequestMapping("/api/v1//map")
 public class MapController {
     private final MapService mapService;
 
