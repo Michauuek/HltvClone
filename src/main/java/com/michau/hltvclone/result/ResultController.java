@@ -1,9 +1,8 @@
 package com.michau.hltvclone.result;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.michau.hltvclone.result.dto.ResultResponse;
+import com.michau.hltvclone.result.dto.ResultsDTO;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -16,8 +15,14 @@ public class ResultController {
         this.resultService = resultService;
     }
 
+
+    @GetMapping
+    public ResultsDTO getResultsPage(@RequestParam(name = "page", defaultValue = "1") Integer page){
+        return resultService.getResults(page);
+    }
+
     @GetMapping("/{matchId}")
-    public List<ResultResponse> getMatchResult(@PathVariable("matchId") long matchId) {
+    public List<ResultResponse> getMatchResult(@PathVariable("matchId") Long matchId) {
         return resultService.getMatchResult(matchId);
     }
 }

@@ -21,7 +21,7 @@ public class EventController {
         this.eventService = eventService;
     }
     @GetMapping("/{id}")
-    public EventResponse getEventById(@PathVariable("id") long id) {
+    public EventResponse getEventById(@PathVariable("id") Long id) {
         return eventService.getEventById(id);
     }
 

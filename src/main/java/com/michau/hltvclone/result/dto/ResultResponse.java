@@ -1,4 +1,4 @@
-package com.michau.hltvclone.result;
+package com.michau.hltvclone.result.dto;
 
 import lombok.Builder;
 import lombok.Data;
