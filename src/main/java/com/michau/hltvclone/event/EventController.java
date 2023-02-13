@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.*;
 
 
 /**
- * Add query and format like normal sql - in repo
- * Add eq api/v1/ to controllers
+ * Add query and format like normal sql - in repo - DONE
+ * Add eq api/v1/ to controllers -DONE
  * Add response entities
  * Add readme
  * Test code

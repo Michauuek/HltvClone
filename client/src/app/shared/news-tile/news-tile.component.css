@@ -1,0 +1,25 @@
+#root-container {
+    background-color: #2D3844;
+    
+    color: #59728E;
+    font-weight: 700;
+    font-size: 0.8em;
+    text-align: left;
+
+    border-bottom-style: solid;
+    border-width: 0.1px;
+    border-color: #6f859c79; 
+
+    width: 90%;
+}
+
+#row-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+#root-container:hover {
+    background-color: #cecccc54;
+}

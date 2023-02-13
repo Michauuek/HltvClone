@@ -1,0 +1,27 @@
+#row-container {
+    background-color: #45515f42;
+
+    color: #6F859C;
+    font-weight: 500;
+    font-size: 0.7em;
+    text-align: left;
+
+    border-bottom-style: solid;
+    border-width: 0.1px;
+    border-color: #6f859c79; 
+
+    width: 125%;
+
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#row-container:hover {
+    background-color: #cecccc54;
+}
+
+#root-container {
+    margin-bottom: 30px;
+    margin-top: 5px;
+}

@@ -25,3 +25,9 @@
     padding: 10px;
     margin: 10px;
 }
+
+.title {
+    font-size: 0.6em;
+    font-weight: 700;
+    color: #686F73;
+}

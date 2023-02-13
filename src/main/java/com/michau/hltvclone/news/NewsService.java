@@ -11,7 +11,7 @@ public class NewsService {
     public NewsService(NewsRepository newsRepository) {
         this.newsRepository = newsRepository;
     }
-    
+
     public List<NewsResponse> getLatestNews(Integer lastDaysNum) {
         return null;
     }

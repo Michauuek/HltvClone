@@ -9,7 +9,7 @@ import java.util.List;
 
 @Service
 public class MatchService {
-    private MatchRepository matchRepository;
+    private final MatchRepository matchRepository;
 
     public MatchService(MatchRepository matchRepository) {
         this.matchRepository = matchRepository;

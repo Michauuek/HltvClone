@@ -9,13 +9,17 @@ import { ApiService } from './main-page/main-page-api-service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HeaderComponent } from './shared/header/header.component';
 import { NewsTileComponent } from './shared/news-tile/news-tile.component';
+import { RankingPreviewComponent } from './shared/ranking-preview/ranking-preview.component';
+import { EventsPreviewComponent } from './shared/events-preview/events-preview.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainPageComponent,
     HeaderComponent,
-    NewsTileComponent
+    NewsTileComponent,
+    RankingPreviewComponent,
+    EventsPreviewComponent
   ],
   imports: [
     BrowserModule,
