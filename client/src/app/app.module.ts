@@ -11,6 +11,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { NewsTileComponent } from './shared/news-tile/news-tile.component';
 import { RankingPreviewComponent } from './shared/ranking-preview/ranking-preview.component';
 import { EventsPreviewComponent } from './shared/events-preview/events-preview.component';
+import { MatchesPreviewComponent } from './shared/matches-preview/matches-preview.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EventsPreviewComponent } from './shared/events-preview/events-preview.c
     HeaderComponent,
     NewsTileComponent,
     RankingPreviewComponent,
-    EventsPreviewComponent
+    EventsPreviewComponent,
+    MatchesPreviewComponent
   ],
   imports: [
     BrowserModule,

@@ -17,11 +17,24 @@
     padding-bottom: 5px;
 }
 
-#row-container:hover {
-    background-color: #cecccc54;
-}
+
 
 #root-container {
     margin-bottom: 30px;
     margin-top: 5px;
 }
+
+#title-container {
+    width: 125%;
+    background-color: #435971;
+    color: white;
+    font-size: 0.6em;
+    font-weight: 600;
+    text-align: center;
+    padding: 7px;
+}
+
+#title-container:hover {
+    background-color: #cecccc54;
+}
+

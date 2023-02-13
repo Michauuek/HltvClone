@@ -31,3 +31,9 @@
     font-weight: 700;
     color: #686F73;
 }
+
+img {
+    width: 100%;
+    height: auto;
+    padding: 17px;
+}

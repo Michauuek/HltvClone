@@ -34,7 +34,7 @@ li {
     float: left;
     border-left-style: solid;
     border-width: 0.1px;
-    border-color: gray;
+    border-color: rgba(128, 128, 128, 0.459);
 }
 
 li:hover {
