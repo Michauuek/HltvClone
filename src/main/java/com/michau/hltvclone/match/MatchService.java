@@ -3,7 +3,6 @@ package com.michau.hltvclone.match;
 import com.michau.hltvclone.match.model.MatchResponse;
 import com.michau.hltvclone.match.exception.MatchNotFoundException;
 import com.michau.hltvclone.match.model.MatchesDTO;
-import com.michau.hltvclone.team.Team;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -28,7 +27,7 @@ public class MatchService {
         if(todayMatches.isEmpty()) {
             throw new MatchNotFoundException();
         }
-        todayMatches.forEach(match -> match.getTeams().forEach(Team::getName));
+
         return todayMatches
                 .stream()
                 .map(matchMapper::toResponse)
