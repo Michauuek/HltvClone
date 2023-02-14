@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/match")
+@CrossOrigin
 public class MatchController {
     private final MatchService matchService;
 

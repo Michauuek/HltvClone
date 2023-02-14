@@ -12,6 +12,7 @@ import { NewsTileComponent } from './shared/news-tile/news-tile.component';
 import { RankingPreviewComponent } from './shared/ranking-preview/ranking-preview.component';
 import { EventsPreviewComponent } from './shared/events-preview/events-preview.component';
 import { MatchesPreviewComponent } from './shared/matches-preview/matches-preview.component';
+import { MainApiService } from './app-main-service';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { MatchesPreviewComponent } from './shared/matches-preview/matches-previe
     HttpClientModule,
     NgbModule,
   ],
-  providers: [ApiService],
+  providers: [MainApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

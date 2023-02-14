@@ -1,13 +1,10 @@
 import {Component, Injectable, OnInit} from '@angular/core';
 import {ApiService} from "./main-page/main-page-api-service";
+import { MainApiService } from './app-main-service';
+import { News } from './models/news';
+import { Team } from './models/team';
+import { Match } from './models/match';
 
-
-
-export interface Map {
-  id: number;
-  name: string;
-  url: string;
-}
 
 @Component({
   selector: 'app-root',
@@ -15,14 +12,13 @@ export interface Map {
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  siema: Map | undefined;
-  siemaTitle: string = "Iem katowiceHalo "
-  constructor(private _apiService: ApiService) {
-  }
+  latestNews: News[] = [];
+
+  constructor(private _apiService: MainApiService) {}
 
   ngOnInit() {
-    this._apiService.getData().subscribe(res => {
-      this.siema = res;
+    this._apiService.getLatestNews(30).subscribe(res => {
+      this.latestNews = res;
     })
   }
 }

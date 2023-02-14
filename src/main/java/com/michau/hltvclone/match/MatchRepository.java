@@ -12,7 +12,7 @@ public interface MatchRepository extends JpaRepository<Match, Long> {
     @Query(
             value = "SELECT * " +
                     "FROM match " +
-                    "WHERE date = ?1",
+                    "WHERE match_date = ?1",
             nativeQuery = true
     )
     List<Match> findAllByDate(LocalDate date);

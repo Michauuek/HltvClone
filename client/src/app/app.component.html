@@ -13,9 +13,7 @@
             </div>
             <div class="col-6" id="column-container">
                 <img src="assets/banner.png" alt="logo" class="logo">
-                <app-news-tile [newsTitle]="siemaTitle" ></app-news-tile>
-                <app-news-tile [newsTitle]="siemaTitle" ></app-news-tile>
-                <app-news-tile [newsTitle]="siemaTitle" ></app-news-tile>
+                <app-news-tile *ngFor="let news of latestNews" [newsTitle]="news.title" ></app-news-tile>
             </div>
             <div class="col" id="column-container">
                 <app-matches-preview></app-matches-preview>
