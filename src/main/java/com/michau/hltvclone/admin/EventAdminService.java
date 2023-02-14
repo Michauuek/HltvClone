@@ -15,12 +15,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AdminService {
+public class EventAdminService {
     private final EventRepository eventRepository;
     private final EventMapper eventMapper;
     private final MapRepository mapRepository;
     private final MatchRepository matchRepository;
-    private final NewsRepository newsRepository;
+
     private final PlayerRepository playerRepository;
     private final ResultRepository resultRepository;
     private final TeamRepository teamRepository;
@@ -29,6 +29,4 @@ public class AdminService {
         var event = eventRepository.save(eventMapper.toEvent(eventRequest));
         return eventMapper.toResponse(event);
     }
-
-
 }

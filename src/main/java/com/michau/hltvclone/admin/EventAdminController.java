@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/admin")
-public class AdminController {
-    private final AdminService adminService;
+@RequestMapping("/api/admin/event")
+public class EventAdminController {
+    private final EventAdminService adminService;
 
-    public AdminController(AdminService adminService) {
+    public EventAdminController(EventAdminService adminService) {
         this.adminService = adminService;
     }
 
-    @PostMapping("/event")
+    @PostMapping("/create")
     public ResponseEntity<EventResponse> addEvent(@RequestBody EventRequest eventRequest) {
         return new ResponseEntity<>(adminService.addEvent(eventRequest), HttpStatus.CREATED);
     }

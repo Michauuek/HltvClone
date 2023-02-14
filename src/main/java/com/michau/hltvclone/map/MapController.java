@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1//map")
+@RequestMapping("/api/v1/map")
 public class MapController {
     private final MapService mapService;
 
@@ -17,9 +17,7 @@ public class MapController {
     @GetMapping("/{name}")
     @CrossOrigin
     public MapResponse getMapByName(@PathVariable("name") String name) {
-        var map = new MapResponse(1, "Mirage", "dupa.png");
-        /*return mapService.getMapByName(name)*/
-        return map;
+        return null;
     }
 
     @GetMapping("/all")

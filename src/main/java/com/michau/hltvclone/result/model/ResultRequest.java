@@ -9,4 +9,5 @@ public class ResultRequest {
     private long teamOneScore;
     private long teamTwoScore;
     private long matchId;
+    private String mapName;
 }

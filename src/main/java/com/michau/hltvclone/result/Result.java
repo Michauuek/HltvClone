@@ -24,6 +24,6 @@ public class Result {
     @ManyToOne
     @JoinColumn(name="MATCH_ID")
     private Match match;
-
-    //map
+    @Column(name = "MAP_NAME")
+    private String mapName;
 }
