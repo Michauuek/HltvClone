@@ -4,6 +4,8 @@ import com.michau.hltvclone.team.model.TeamResponse;
 import com.michau.hltvclone.team.exception.TeamNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TeamService {
     private final TeamRepository teamRepository;
@@ -26,5 +28,18 @@ public class TeamService {
         }
 
         return teamMapper.toResponse(team);
+    }
+
+    public List<TeamResponse> getTopTeams(Integer amount) {
+        if(amount == null || amount < 1) {
+            throw new IllegalArgumentException("Amount cannot be less than 1");
+        }
+
+        var topTeams = teamRepository.findBestTeams(amount);
+
+        return topTeams
+                .stream()
+                .map(teamMapper::toResponse)
+                .toList();
     }
 }
