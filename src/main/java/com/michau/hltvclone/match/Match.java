@@ -1,5 +1,6 @@
 package com.michau.hltvclone.match;
 
+import com.michau.hltvclone.map.Map;
 import com.michau.hltvclone.result.Result;
 import com.michau.hltvclone.team.Team;
 import jakarta.persistence.*;
@@ -25,6 +26,12 @@ public class Match {
     private LocalDate date;
     @Column(name = "MATCH_TIME")
     private LocalTime time;
+    @Column(name = "MATCH_FORMAT")
+    @Enumerated(EnumType.STRING)
+    private MatchFormat format;
+    @Column(name = "MATCH_STATUS")
+    @Enumerated(EnumType.STRING)
+    private MatchStatus status;
     @ManyToMany
     @JoinTable(
             name = "MATCH_TEAM",
@@ -34,10 +41,11 @@ public class Match {
     @OneToMany(mappedBy = "match")
     private List<Result> results;
 
-    //format - BO1
-
-    //status
-
-    //maps
+    @ManyToMany
+    @JoinTable(
+            name = "MATCH_MAP",
+            joinColumns =  @JoinColumn(name = "MATCH_ID"),
+            inverseJoinColumns = @JoinColumn(name = "MAP_ID"))
+    private List<Map> maps;
 
 }

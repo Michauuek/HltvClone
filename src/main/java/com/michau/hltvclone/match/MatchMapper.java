@@ -1,5 +1,6 @@
 package com.michau.hltvclone.match;
 
+import com.michau.hltvclone.map.Map;
 import com.michau.hltvclone.match.model.MatchRequest;
 import com.michau.hltvclone.match.model.MatchResponse;
 import org.springframework.stereotype.Component;
@@ -13,6 +14,7 @@ public class MatchMapper {
                 .builder()
                 .date(request.getDate())
                 .time(request.getTime())
+                .format(request.getFormat())
                 .build();
     }
 
@@ -23,8 +25,14 @@ public class MatchMapper {
                 .matchId(match.getMatchId())
                 .date(match.getDate())
                 .time(match.getTime())
-                .teamOneName(
-                        match
+                .format(match.getFormat())
+                .status(match.getStatus())
+                .mapsName(match
+                        .getMaps()
+                        .stream()
+                        .map(Map::getName)
+                        .toList())
+                .teamOneName(match
                                 .getTeams()
                                 .isEmpty() ? null : match
                                 .getTeams()
@@ -32,8 +40,7 @@ public class MatchMapper {
                                 .toList()
                                 .get(0)
                                 .getName())
-                .teamTwoName(
-                        match
+                .teamTwoName(match
                                 .getTeams()
                                 .size() > 1 ? match
                                 .getTeams()

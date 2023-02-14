@@ -11,7 +11,7 @@ public class NewsMapper {
                 .builder()
                 .title(request.getTitle())
                 .content(request.getContent())
-                .date(request.getDate())
+                .uploadDate(request.getDate())
                 .build();
     }
 
@@ -21,7 +21,7 @@ public class NewsMapper {
                 .newsId(news.getNewsId())
                 .content(news.getContent())
                 .title(news.getTitle())
-                .date(news.getDate())
+                .date(news.getUploadDate())
                 .build();
     }
 }

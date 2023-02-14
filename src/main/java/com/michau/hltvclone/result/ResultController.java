@@ -2,6 +2,8 @@ package com.michau.hltvclone.result;
 
 import com.michau.hltvclone.result.model.ResultResponse;
 import com.michau.hltvclone.result.model.ResultsDTO;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,14 +17,15 @@ public class ResultController {
         this.resultService = resultService;
     }
 
-
     @GetMapping
-    public ResultsDTO getResultsPage(@RequestParam(name = "page", defaultValue = "1") Integer page){
-        return resultService.getResults(page);
+    public ResponseEntity<ResultsDTO> getResultsPage(
+            @RequestParam(name = "page", defaultValue = "1") Integer page){
+        return new ResponseEntity<>(resultService.getResults(page), HttpStatus.OK);
     }
 
     @GetMapping("/{matchId}")
-    public List<ResultResponse> getMatchResult(@PathVariable("matchId") Long matchId) {
-        return resultService.getMatchResult(matchId);
+    public ResponseEntity<List<ResultResponse>> getMatchResult(
+            @PathVariable("matchId") Long matchId) {
+        return new ResponseEntity<>(resultService.getMatchResult(matchId), HttpStatus.OK);
     }
 }

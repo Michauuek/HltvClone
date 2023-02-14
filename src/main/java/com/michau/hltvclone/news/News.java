@@ -25,7 +25,7 @@ public class News {
     @Column(name = "CONTENT")
     private String content;
 
-    @Column(name = "DATE")
-    private LocalDate date;
+    @Column(name = "UPLOAD_DATE")
+    private LocalDate uploadDate;
 
 }

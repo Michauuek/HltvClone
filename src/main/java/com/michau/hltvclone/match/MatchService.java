@@ -1,7 +1,11 @@
 package com.michau.hltvclone.match;
 
 import com.michau.hltvclone.match.model.MatchResponse;
-import com.michau.hltvclone.match.exception.MatchesNotFoundException;
+import com.michau.hltvclone.match.exception.MatchNotFoundException;
+import com.michau.hltvclone.match.model.MatchesDTO;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -21,12 +25,31 @@ public class MatchService {
         var todayMatches = matchRepository.findAllByDate(LocalDate.now());
 
         if(todayMatches.isEmpty()) {
-            throw new MatchesNotFoundException();
+            throw new MatchNotFoundException();
         }
 
         return todayMatches
                 .stream()
                 .map(matchMapper::toResponse)
                 .toList();
+    }
+
+    public MatchesDTO getMatches(Integer pageNumber) {
+        int page = pageNumber < 1 ? 0 : pageNumber -1;
+        Pageable pageable = PageRequest.of(page, 10, Sort.Direction.DESC);
+
+        var results = matchRepository
+                .findAll(pageable)
+                .map(matchMapper::toResponse);
+
+        return new MatchesDTO(results);
+    }
+
+    public MatchResponse getMatchById(Long id) {
+        var match = matchRepository
+                .findById(id)
+                .orElseThrow(MatchNotFoundException::new);
+
+        return matchMapper.toResponse(match);
     }
 }

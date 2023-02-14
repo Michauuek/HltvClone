@@ -1,6 +1,10 @@
 package com.michau.hltvclone.news;
 
 import com.michau.hltvclone.news.model.NewsResponse;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +19,15 @@ public class NewsController {
         this.newsService = newsService;
     }
 
-    public List<NewsResponse> getLatestNews(Integer lastDaysNum){
-        return newsService.getLatestNews(lastDaysNum);
+    @GetMapping("/{id}")
+    public ResponseEntity<NewsResponse> getNews(@PathVariable("id") Long id){
+        return new ResponseEntity<>(newsService.getNewsById(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/latest/{days}")
+    public ResponseEntity<List<NewsResponse>> getLatestNews(
+            @PathVariable("days") Integer lastDaysNum){
+
+        return new ResponseEntity<>(newsService.getLatestNews(lastDaysNum), HttpStatus.OK);
     }
 }
