@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("api/admin/player")
-public class PlayerController {
+public class PlayerAdminController {
     private final PlayerAdminService playerService;
 
-    public PlayerController(PlayerAdminService playerService) {
+    public PlayerAdminController(PlayerAdminService playerService) {
         this.playerService = playerService;
     }
 
